@@ -1,78 +1,166 @@
-*   {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    }
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* Header */
-    header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 30px;
-    background-color: rgba(217, 217, 217, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: rgba(217, 217, 217, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
 
-    header img {
-    height: 60px;
-    }
-    nav ul {
-    list-style-type: none;
-    text-align: center;
-    }
-    nav ul li {
-    display: inline;
-    margin: 0 20px;
-    }
-    nav ul li a {
-    text-decoration: none;
-    color: #050505;
-    font-family: "Noto Serif Display", serif;
-    }
+header img {
+  height: 60px;
+}
 
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
 
-    .hero-content h1 {
-    font-size: 6rem;
-    font-family:"Noto Serif Display", serif;
-    font-weight: bold;
-    color: #FFFFFF;
-    margin-left: 10%;
-    margin-bottom: 5px;
-    margin-top: -700px;
-    }
+nav ul li a {
+  text-decoration: none;
+  color: #050505;
+  font-family: "Noto Serif Display", serif;
+  transition: color 0.3s ease;
+}
 
-  .hero-content img{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    }
-  
-  .hero-content .tagline {
-    font-size: 1.2rem;
-    color: #FFFFFF;
-    margin-bottom: 20px;
-    margin-left:10.5%;
-    }
-  
+nav ul li a:hover {
+  color: #a48d52; /* Slight hover effect */
+}
+
+/* Cover Section */
+.Cover-content {
+  position: relative;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.Cover-content img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.Cover-content h1 {
+  font-size: 6rem;
+  font-family: "Noto Serif Display", serif;
+  font-weight: bold;
+  color: #FFFFFF;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+
+.Cover-content .tagline {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+}
+
+.shop-now-button {
+  display: inline-block;
+  padding: 15px 50px;
+  font-size: 1rem;
+  color: #333;
+  background-color: transparent;
+  border: 2px solid #000000;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 55%;
+  left: 10%;
+}
+
+.shop-now-button:hover {
+  background-color: #252525;
+  color: #FFF;
+}
+
+/* Content Section */
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding-top: 20px; /* To account for the fixed header */
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 10px;
+  margin-left: -5%;
+  color: #1b1b1b;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap; /* Added to handle smaller screens */
+  gap: 0px;
+  align-items: center;
+}
+
+.text-box {
+  flex: 7;
+  background-color: rgba(184, 157, 127, 0.3);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #555;
+}
+
+.image-box {
+  flex: 3;
+  text-align: center;
+}
+
+.image-box img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .Cover-content h1 {
+      font-size: 4rem;
+  }
+
+  .Cover-content .tagline {
+      font-size: 1rem;
+  }
+
   .shop-now-button {
-    display: inline-block;
-    padding: 20px 70px;
-    font-size: 16px;
-    color: #333;
-    background-color: transparent;
-    border: 2px solid #000000;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s;
-    margin-left: 10.5%;
-    }
-  
-  .shop-now-button:hover {
-    background-color: #252525;
-    color: #FFF;
-    }
+      font-size: 0.9rem;
+      padding: 10px 40px;
+  }
+
+  .content {
+      flex-direction: column;
+  }
+
+  .text-box {
+      flex: unset;
+  }
+
+  .image-box {
+      flex: unset;
+  }
+}
