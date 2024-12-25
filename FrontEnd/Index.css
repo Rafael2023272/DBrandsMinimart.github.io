@@ -378,7 +378,8 @@ h2 {
 }
 
 .logo-section img {
-  width: 100px; /* Adjust based on your logo size */
+  width: 50%;/* Adjust based on your logo size */
+  height: auto;
 }
 
 .contact {
