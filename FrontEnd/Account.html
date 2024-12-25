@@ -10,9 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <title>Login & Sign Up</title>
 </head>
 <body>
@@ -20,6 +17,7 @@
         <a href="index.html">
             <img src="Dbrands Minimart (1).png" alt="DBRANDS MINIMART Logo">
         </a>
+        <span class="burger-menu" onclick="toggleMenu()">☰</span>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -47,7 +45,7 @@
             </form>
             <p>Don't have an account?  <a href="#" onclick="toggleForm('signup')"> Sign Up Now</a></p>
         </div>
-    
+
         <!-- Sign Up Form (Initially hidden) -->
         <div id="signup-form" style="display: none;">
             <h1>Create An Account</h1>
@@ -61,8 +59,12 @@
             <p>Do you have an account? <a href="#" onclick="toggleForm('login')">Log In Now</a></p>
         </div>
     </div>
+
+    <div class="password-container">
+        <input type="password" id="password" placeholder="Enter your Password" required>
+        <i id="toggle-password" class="fas fa-eye"></i>
+    </div>
     
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
     function toggleForm(formType) {
         if (formType === 'signup') {
@@ -73,6 +75,13 @@
             document.getElementById('login-form').style.display = 'block';
         }
     }
+</script>
+
+<script>
+   function toggleMenu() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+}
 </script>
 </body>
 </html>
