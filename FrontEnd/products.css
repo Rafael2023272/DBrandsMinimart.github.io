@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+body {
+  background-color: #eadebd7c;
+}
+  /* Header */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: rgba(217, 217, 217, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  header img {
+    height: 60px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #050505;
+    font-family: "Noto Serif Display", serif;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #a48d52; 
+  }
+  
+  .Items-heading h2 {
+    font-size: 2em;
+    font-family: "Noto Serif Display", serif;
+    color: #333;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 3%;
+  }
+  
+  .Items-container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    gap: 10px;
+    background: linear-gradient(to left, rgba(255, 187, 0, 0.181), rgba(230, 166, 117, 0.175));
+    font-family: "Antic Didone", serif;
+  }
+  
+  .Items {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+    position: relative;
+  }
+  
+  .Items img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .Items h3 {
+    font-size: 1.2em;
+    margin: 5px 0;
+    text-align: left;
+  }
+  
+  .Items p {
+    font-size: 0.9em;
+    color: #000000;
+    text-align: left;
+  }
+  
+  .price {
+    position: absolute; 
+    right: 20px; 
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-family: "Anton", serif;
+    color: #000000;
+    margin-top: 10px;
+    border: 1px solid #000000;
+    background-color: rgba(217, 217, 217, 0.5);
+  }
+  
+  .Items button {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+    justify-content: left;
+    text-align: left;
+    align-self: start;
+    border: 1px solid #000000;
+    font-family: "Antic Didone", serif;
+  }
+  
+  .Items button:hover {
+    background-color: #e9e0c3;
+  }
+
+  .image-container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    margin: 5% auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cart-icon {
+    position: absolute;
+    width: 40px;
+    padding: 5px 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 5px;
+    border: 1px solid #000000;
+    box-shadow: none !important; 
+}
+
+  .images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  .images img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease; 
+  }
+  
+  .text-content {
+    flex: 1;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .text-content h1 {
+    font-size: 3rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  
+  .text-content p {
+    font-size: 1.5rem;
+    color: gray;
+  }
+  
+  .images img:hover {
+    transform: scale(1.1); 
+  }
+  .images:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  }
+  
+
+  .footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 40px;
+    background: url('Desktop - 4.png') no-repeat center/cover;
+    color: white;
+  }
+  
+  .footer .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo-section {
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  .logo-section img {
+    width: 50%;
+    height: auto;
+  }
+  
+  .contact {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .contact p {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .follow-us {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .follow-us p {
+    margin-bottom: 10px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .quote {
+    position: absolute;
+    top: 20px;
+    right: 90px;
+    font-size: 2rem;
+    font-style: italic;
+    text-align: right;
+  }
+  
