@@ -1,12 +1,11 @@
-/* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* Header */
-header {
+  }
+  
+  /* Header */
+  header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,13 +16,13 @@ header {
     top: 0;
     left: 0;
     z-index: 1;
-}
-
-header img {
+  }
+  
+  header img {
     height: 60px;
-}
-
-nav ul {
+  }
+  
+  nav ul {
     list-style-type: none;
     display: flex;
     gap: 20px;
@@ -37,7 +36,7 @@ nav ul {
   }
   
   nav ul li a:hover {
-    color: #a48d52; /* Slight hover effect */
+    color: #a48d52; 
   }
 
 .Cover-content {
@@ -70,10 +69,10 @@ nav ul {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 50%); /* Starts slightly off-center for slide-up effect */
+    transform: translate(-50%, 50%); 
     background: linear-gradient(to top, #463c21, rgba(133, 109, 90, 0.885));
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    animation: slideUp 0.8s ease-in-out forwards; /* Slide-up animation */
+    animation: slideUp 0.8s ease-in-out forwards; 
     z-index: 1;
 }
 
@@ -141,7 +140,7 @@ a {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 p {
-    text-align: center; /* Center the text horizontally */
+    text-align: center; 
     font-size: 1rem;
     color: white;
     margin: 10px 0;
@@ -163,7 +162,7 @@ a:hover {
     border-radius: 10px;
     font-size: 1rem;
     width: 100%;
-    padding-right: 40px; /* Space for the eye icon */
+    padding-right: 40px; 
 }
 
 #toggle-password {
@@ -178,17 +177,17 @@ a:hover {
 }
 
 #toggle-password:hover {
-    color: #a48d52; /* Change color on hover */
+    color: #a48d52;
 }
 
 /* Animations */
 @keyframes slideUp {
     0% {
-        transform: translate(-50%, 70%); /* Start slightly below the center */
+        transform: translate(-50%, 70%); 
         opacity: 0;
     }
     100% {
-        transform: translate(-50%, -50%); /* End perfectly centered */
+        transform: translate(-50%, -50%); 
         opacity: 1;
     }
 }
@@ -207,13 +206,14 @@ a:hover {
 
 /* Mobile-Specific Styles */
 @media (max-width: 720px) {
+    
     /* Header Adjustments */
     header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 10px 20px;
-        background-color: rgba(217, 217, 217, 0.5);
+        background-color: rgb(217, 217, 217);
         position: fixed;
         
     }
@@ -228,12 +228,12 @@ a:hover {
 
     /* Hide the Navigation Initially */
     nav {
-        display: none; /* Hidden by default */
+        display: flex; /* Hidden by default */
         position: absolute;
         top: 70px; /* Adjust based on header height */
         right: 0;
-        background-color: rgba(217, 217, 217, 0.7);
-        width: 30%;
+        background-color: rgba(186, 186, 186, 0.9);
+        width: 20%;
         border-radius: 5%;
         z-index: 1;
         transform: translateY(-20px); /* Animation starts from top */
@@ -265,9 +265,9 @@ a:hover {
         transition: all 0.3s ease-in-out; /* Smooth transitions */
     }
 
-    /* New Hover Effect - Change text color */
+  
     nav ul li a:hover {
-        color: #a48d52; /* Text color change on hover */
+        color: #a48d52;
     }
 
     /* Links will fade in when burger menu is active */
