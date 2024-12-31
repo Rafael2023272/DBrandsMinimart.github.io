@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Account.css">
-     <!-- Google Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -25,11 +25,11 @@
         <a href="index.html">
             <img src="Dbrands Minimart (1).png" alt="DBRANDS MINIMART Logo">
         </a>
-          <!-- Burger Menu for Navigation (Visible on Small Screens) -->
+        <!-- Burger Menu for Navigation (Visible on Small Screens) -->
         <span class="burger-menu" onclick="toggleMenu()">☰</span>
         <nav>
             <ul>
-                  <!-- Navigation Menu -->
+                <!-- Navigation Menu -->
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="Account.html">Account</a></li>
@@ -38,67 +38,81 @@
     </header>
 
     <div class="Cover-content">
-        <div class="Cover-image">
-            <img src="CoverPage.png" alt="Hero Image">
-        </div>
+        <div class="form-container">
+            <!-- Login Form -->
+            <div id="login-form">
+                <h1>Welcome Back</h1>
+                <form>
+                    <!-- Input Fields for Email and Password -->
+                    <input type="email" placeholder="Enter your Email" required>
+                    <input type="password" placeholder="Enter your Password" required>
+                    <button type="submit">LOG IN</button>
+                    <br>
+                </form>
+                <!-- Link to Switch to Sign-Up Form -->
+                <p>Don't have an account?  <a href="#" onclick="toggleForm('signup')"> Sign Up Now</a></p>
+            </div>
 
-    <div class="form-container">
-        <!-- Login Form -->
-        <div id="login-form">
-            <h1>Welcome Back</h1>
-            <form>
-                  <!-- Input Fields for Email and Password -->
-                <input type="email" placeholder="Enter your Email" required>
-                <input type="password" placeholder="Enter your Password" required>
-                <button type="submit">LOG IN</button>
+            <!-- Sign Up Form (Initially hidden) -->
+            <div id="signup-form" style="display: none;">
+                <h1>Create An Account</h1>
+                <form>
+                    <!-- Input Fields for Name, Email, and Password -->
+                    <input type="text" placeholder="Enter your Name" required>
+                    <input type="email" placeholder="Enter your Email" required>
+                    <input type="password" placeholder="Enter your Password" required>
+                    <button type="submit">SIGN UP</button>
+                </form>
                 <br>
-            </form>
-              <!-- Link to Switch to Sign-Up Form -->
-            <p>Don't have an account?  <a href="#" onclick="toggleForm('signup')"> Sign Up Now</a></p>
-        </div>
-
-        <!-- Sign Up Form (Initially hidden) -->
-        <div id="signup-form" style="display: none;">
-            <h1>Create An Account</h1>
-            <form>
-                 <!-- Input Fields for Name, Email, and Password -->
-                <input type="text" placeholder="Enter your Name" required>
-                <input type="email" placeholder="Enter your Email" required>
-                <input type="password" placeholder="Enter your Password" required>
-                <button type="submit">SIGN UP</button>
-            </form>
-            <br>
-              <!-- Link to Switch Back to Login Form -->
-            <p>Do you have an account? <a href="#" onclick="toggleForm('login')">Log In Now</a></p>
+                <!-- Link to Switch Back to Login Form -->
+                <p>Do you have an account? <a href="#" onclick="toggleForm('login')">Log In Now</a></p>
+            </div>
         </div>
     </div>
 
-     <!-- Password Input with Toggle Visibility Icon -->
-    <div class="password-container">
-        <input type="password" id="password" placeholder="Enter your Password" required>
-        <i id="toggle-password" class="fas fa-eye"></i>
-    </div>
-    
     <script>
-           <!-- Script to Toggle Between Login and Sign-Up Forms -->
+        <!-- Script to Toggle Between Login and Sign-Up Forms -->
     function toggleForm(formType) {
-        if (formType === 'signup') {
-            document.getElementById('login-form').style.display = 'none';
-            document.getElementById('signup-form').style.display = 'block';
-        } else if (formType === 'login') {
-            document.getElementById('signup-form').style.display = 'none';
-            document.getElementById('login-form').style.display = 'block';
-        }
+     if (formType === 'signup') {
+         document.getElementById('login-form').style.display = 'none';
+         document.getElementById('signup-form').style.display = 'block';
+     } else if (formType === 'login') {
+         document.getElementById('signup-form').style.display = 'none';
+         document.getElementById('login-form').style.display = 'block';
+     }
     }
-</script>
+    </script>
 
-<script>
-      <!-- Script to Handle Burger Menu Toggle -->
-   document.querySelector('.burger-menu').addEventListener('click', function() {
-  document.querySelector('nav').classList.toggle('active');
-});
-</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector("header");
+
+            // Initially set the header to transparent
+            header.classList.add("transparent");
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 0) {
+                    header.classList.add("scrolled");
+                    header.classList.remove("transparent");
+                } else {
+                    header.classList.remove("scrolled");
+                    header.classList.add("transparent");
+                }
+            });
+        });
+    </script>
+
+    <script>
+        const burgerMenu = document.querySelector('.burger-menu');
+        const nav = document.querySelector('nav');
+
+        burgerMenu.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
+
+
 
 
