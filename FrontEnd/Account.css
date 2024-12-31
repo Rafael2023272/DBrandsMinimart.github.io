@@ -1,6 +1,6 @@
- /* Global Styles */
+/* Global Styles */
  /* Reset margin and padding for all elements, and use border-box for consistent sizing */
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -21,6 +21,14 @@
     z-index: 1;
   }
   
+  header.transparent {
+    background-color: transparent;
+}
+
+header.scrolled {
+    background-color: rgba(217, 217, 217, 0.5);
+}
+
   /* Header Logo */
   /* Set the height of the logo image */
   header img {
@@ -48,23 +56,38 @@
   nav ul li a:hover {
     color: #a48d52;
   }
+
+  @keyframes slideshow {
+    0% {
+        background: url('image1.jpg') no-repeat center center/cover;
+    }
+    25% {
+        background: url('image2.jpg') no-repeat center center/cover;
+    }
+    50% {
+        background: url('image3.jpg') no-repeat center center/cover;
+    }
+    75% {
+        background: url('image4.jpg') no-repeat center center/cover;
+    }
+    100% {
+        background: url('image1.jpg') no-repeat center center/cover;
+    }
+}
+
   
   /* Cover Section */
   /* Style the full-page cover image or hero section */
   .Cover-content {
-    position: absolute;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    background-image: url("CoverPage.png"); /* Background image for the section */
-    z-index: -1; /* Send behind other elements */
-  }
-  
-  .Cover-content img {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
+    text-align: left;
+    color: white;
+    height: 100vh;
+    z-index: -1; /* Ensure it is behind the form container */
+    animation: slideshow 15s infinite;
+    }
   
   /* Form Container */
   .form-container {
@@ -151,7 +174,6 @@
   a {
     text-decoration: none; /* Remove underline */
     color: rgba(255, 255, 255, 0.9);
-    font-weight: bold;
     transition: color 0.3s ease, transform 0.3s ease;
   }
 
@@ -233,81 +255,71 @@
   }
   
   /* Mobile-Specific Styles */
-  @media (max-width: 720px) {
+@media (max-width: 720px) {
     /* Header Adjustments */
-  header {
-    padding: 10px 20px; /* Adjust padding for smaller screens */
-  }
-
-  /* Burger Menu Icon */
-  .burger-menu {
-    display: block;
-    font-size: 2rem;
-    color: #282828;
-    cursor: pointer;
-  }
-
-  /* Navigation */
-   /* Hide the navigation menu by default */
-  nav {
-    display: none; /* Hidden by default */
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background-color: rgba(217, 217, 217, 0.5);
-    width: 30%;  /* Restrict width for mobile */
-    z-index: 1;
-    transform: translateY(-20px); /* Hidden initially */
-    transition: transform 0.3s ease-out;
-  }
-
-   /* Show the menu when active */
-  nav.active {
-    display: block; /* Make it visible when active */
-    transform: translateY(0);  /* Slide into view */
-  }
-
-   /* Mobile-friendly navigation styling */
-  nav ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column; /* Stack links vertically */
-    gap: 15px;
-    padding: 15px 20px;
-    margin: 0;
-  }
-
-  nav ul li {
-    /* Remove opacity animation, just rely on sliding effect */
-    animation: fadeInLinks 0.3s ease-in-out forwards;
-  }
-
-  nav ul li:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-  nav ul li:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-  nav ul li:nth-child(3) {
-    animation-delay: 0.3s;
-  }
-  nav ul li:nth-child(4) {
-    animation-delay: 0.4s;
-  }
-  }
-
-/* Animation for fading in links */
-@keyframes fadeInLinks {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+    header {
+        padding: 10px 20px; /* Maintain consistent padding */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff; 
+        border-bottom: 1px solid #ccc; 
+    }
+      
+      /* Burger Menu Icon */
+    .burger-menu {
+        display: block;
+        font-size: 2rem;
+        color: #282828;
+        cursor: pointer;
+        z-index: 3; /* Ensure it stays above the nav menu */
+      }
+      
+      /* Navigation */
+    nav {
+        position: fixed; /* Fixed positioning for a full-page effect */
+        top: 0;
+        right: 0;
+        height: 100%; /* Full screen height */
+        width: 50%; /* 70% of the screen width */
+        background-color: rgba(113, 91, 54, 0.9); /* Semi-transparent background */
+        transform: translateX(100%); /* Initially hidden off-screen to the right */
+        transition: transform 0.3s ease-out; /* Smooth sliding animation */
+        z-index: 2;
+      }
+      
+      /* Show the menu when active */
+    nav.active {
+        transform: translateX(0); /* Slide into view */
+      }
+      
+      /* Navigation styling */
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        gap: 50px;
+        padding: 20px;
+        margin-top: 30%;
+        text-align: center; /* Center align the links */
+        height: 100%; /* Fill the height */
+        justify-content: start; /* Vertically center the links */
+      }
+      
+    nav ul li a {
+        text-decoration: none;
+        color: #000000;
+        font-size: 1.5rem;
+        transition: color 0.3s ease-in-out;
+      }
+      
+    nav ul li a:hover {
+        color: #e3e3e3; /* Change color on hover */
+      }
+    }          
   
   /* For larger screens */
-  @media (min-width: 721px) {
+@media (min-width: 721px) {
     .burger-menu {
       display: none; /* Hide the burger menu on larger screens */
     }
