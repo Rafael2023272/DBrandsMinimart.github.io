@@ -22,6 +22,7 @@
         <a href="index.html">
             <img src="Dbrands Minimart (1).png" alt="DBRANDS MINIMART Logo">
         </a>
+        <span class="burger-menu" onclick="toggleMenu()">☰</span>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -33,7 +34,7 @@
     </header>
 
     <div class="Items-heading"  data-aos="fade-up" data-aos-delay="100">
-        <h2>Check Out Our Products</h2>
+        <h2 data-aos="zoom-in" data-aos-delay="100">Check Out Our Products</h2>
       </div>
 
     <div class="Items-container">
@@ -264,7 +265,7 @@
               </div>
 
           <div class="image-container">
-            <div class="images">
+            <div class="images" data-aos="zoom-in" data-aos-delay="400">
                 <img src="Glowbar.jpeg" alt="Product 1">
                 <img src="Tokyo Soap.jpeg" alt="Product 2">
                 <img src="Beyouthful.jpg" alt="Product 3">
@@ -290,7 +291,7 @@
                 </div>
                 <div class="follow-us">
                     <p><strong>FOLLOW US:</strong></p>
-                    <div class="social-icons"  data-aos="fade-up">
+                    <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-tiktok"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -305,12 +306,40 @@
         <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-        <script>
-            AOS.init({
-              duration: 1200, // Animation duration
-              easing: 'ease-in-out', // Animation easing
-            });
-          </script>
+  <script> 
+  document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector("header");
+        
+ // Initially set the header to transparent
+  header.classList.add("transparent");
+        
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 0) {
+              header.classList.add("scrolled");
+              header.classList.remove("transparent");
+       } else {
+              header.classList.remove("scrolled");
+              header.classList.add("transparent");
+            }
+          });
+        });
+  </script>
+
+<script>
+  AOS.init({
+  duration: 800, // Animation duration
+  easing: 'ease-in-out', // Animation easing
+    });
+</script>
+
+<script>
+  const burgerMenu = document.querySelector('.burger-menu');
+const nav = document.querySelector('nav');
+
+burgerMenu.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+</script>
         
 </body>
 </html>
