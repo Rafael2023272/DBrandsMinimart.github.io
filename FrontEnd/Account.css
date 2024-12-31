@@ -1,3 +1,5 @@
+ /* Global Styles */
+ /* Reset margin and padding for all elements, and use border-box for consistent sizing */
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +7,7 @@
   }
   
   /* Header */
+  /* Styles for the website's header, making it fixed at the top and responsive */
   header {
     display: flex;
     align-items: center;
@@ -18,16 +21,22 @@
     z-index: 1;
   }
   
+  /* Header Logo */
+  /* Set the height of the logo image */
   header img {
     height: 60px;
   }
   
+  /* Navigation Menu */
+  /* Remove default list styling and align navigation links horizontally */
   nav ul {
     list-style-type: none;
     display: flex;
     gap: 20px;
   }
   
+  /* Navigation Links */
+  /* Style links with a font, transition, and color */
   nav ul li a {
     text-decoration: none;
     color: #050505;
@@ -35,81 +44,86 @@
     transition: color 0.3s ease;
   }
   
+  /* Change link color on hover */
   nav ul li a:hover {
-    color: #a48d52; 
+    color: #a48d52;
   }
-
-.Cover-content {
+  
+  /* Cover Section */
+  /* Style the full-page cover image or hero section */
+  .Cover-content {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url("CoverPage.png");
-    z-index: -1;
-}
-
-.Cover-content img {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url("CoverPage.png"); /* Background image for the section */
+    z-index: -1; /* Send behind other elements */
+  }
+  
+  .Cover-content img {
     position: absolute;
     width: 100%;
     height: 100%;
     z-index: 1;
-}
-
-/* Form Container */
-.form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 15px;
-    padding: 30px;
-    gap: 20px;
-    width: 100%;
-    max-width: 300px;
+  }
+  
+  /* Form Container */
+  .form-container {
+    display: flex;  /* Arrange elements in a column */
+    justify-content: center; /* Center align horizontally */
+    align-items: center; /* Center align vertically */
+    flex-direction: column; /* Stack child elements vertically */
+    border-radius: 15px; /* Rounded corners */
+    padding: 30px; /* Inner spacing */
+    gap: 20px; /* Space between child elements */
+    width: 100%; /* Full width */
+    max-width: 300px; /* Limit maximum width */
     height: auto;
-    position: absolute;
+    position: absolute;/* Position centrally */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 50%); 
-    background: linear-gradient(to top, #463c21, rgba(133, 109, 90, 0.885));
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    animation: slideUp 0.8s ease-in-out forwards; 
-    z-index: 1;
-}
-
-/* Form Elements */
-h1 {
+    transform: translate(-50%, 50%);  /* Center align */
+    background: linear-gradient(to top, #463c21, rgba(133, 109, 90, 0.885)); /* Gradient background */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    animation: slideUp 0.8s ease-in-out forwards; /* Entry animation */
+    z-index: 1;  /* Ensure it stays above the cover */
+  } 
+  
+  /* Form Elements */
+  h1 {
     font-size: 2rem;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Space below the heading */
     font-weight: 600;
-    text-align: center;
+    text-align: center; /* Center text */
     font-family: "Noto Serif Display", serif;
-    animation: fadeIn 0.8s ease-out;
-}
-
-form {
+    animation: fadeIn 0.8s ease-out;  /* Fade-in animation */
+  }
+  
+  form {
     display: flex;
     flex-direction: column;
     gap: 30px;
-}
-
-input {
+  }
+  
+  /* Focused input styling */
+  input {
     padding: 12px 15px;
     border: 1px solid #ddd;
     border-radius: 10px;
     font-size: 1rem;
-    transition: all 0.3s;
-    outline: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.8s ease-in-out;
-}
+    transition: all 0.3s; /* Smooth transition on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    animation: fadeIn 0.8s ease-in-out;  /* Fade-in animation */
+  }
+  
+  input:focus {
+    border-color: #a48d52; /* Change border color */
+    box-shadow: 0 0 8px rgba(199, 169, 93, 0.995);  /* Highlighted shadow */
+  }
 
-input:focus {
-    border-color: #a48d52;
-    box-shadow: 0 0 8px rgba(164, 141, 82, 0.8);
-}
-
-button {
+  /* Button Styles */
+  button {
     padding: 12px 15px;
     border: none;
     border-radius: 10px;
@@ -117,312 +131,196 @@ button {
     color: white;
     font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease, transform 0.2s ease;
-    font-weight: 600;
+    transition: all 0.3s ease, transform 0.2s ease; /* Smooth transition and scaling */
+    font-weight: 600;  /* Bold text */
     font-family: "Noto Serif Display", serif;
-    animation: fadeIn 0.8s ease-out;
-}
-
-button:hover {
+    animation: fadeIn 0.8s ease-out;  /* Fade-in animation */
+  }
+  
+  /* Button hover and active state */
+  button:hover {
     background-color: #564413;
-    transform: scale(1.1);
-}
-
-button:active {
-    transform: scale(0.95);
-}
-
-/* Links */
-a {
-    text-decoration: none;
+    transform: scale(1.1); /* Slightly enlarge */
+  }
+  
+  button:active {
+    transform: scale(0.95);  /* Shrink slightly when clicked */
+  }
+  
+  /* Links */
+  a {
+    text-decoration: none; /* Remove underline */
     color: rgba(255, 255, 255, 0.9);
     font-weight: bold;
     transition: color 0.3s ease, transform 0.3s ease;
-}
-p {
+  }
+
+  /* Paragraphs */
+  /* Center-align paragraph text and style for consistency */
+  p {
     text-align: center; 
     font-size: 1rem;
     color: white;
     margin: 10px 0;
-}
-
-a:hover {
+    }
+  
+  /* Link Hover */
+  /* Add hover effect for links to change color and scale */
+  a:hover {
     color: #6f430083;
     transform: scale(1.1);
-}
-
-.password-container {
-    position: relative;
+  }
+  
+  /* Password Container */
+  /* Create a container for the password field and toggle icon */
+  .password-container {
+    position: relative; /* Enable positioning of the toggle icon relative to this container */
     width: 100%;
-}
-
-#password {
+  }
+  
+  /* Password Input */
+  /* Style the password input field */
+  #password {
     padding: 12px 15px;
     border: 1px solid #ddd;
     border-radius: 10px;
     font-size: 1rem;
     width: 100%;
-    padding-right: 40px; 
-}
-
-#toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
+    padding-right: 40px;
+  }
+  
+  /* Toggle Password Visibility */
+  /* Position and style the toggle icon for password visibility */
+  #toggle-password {
+    position: absolute; /* Position relative to the container */
+    right: 10px; /* Place near the right edge */
+    top: 50%;  /* Vertically center */
+    transform: translateY(-50%); /* Adjust for exact centering */
+    font-size: 1.2rem;  /* Slightly larger font for visibility */
     cursor: pointer;
     color: #282828;
     transition: color 0.3s ease;
-}
-
-#toggle-password:hover {
+  }
+  
+  /* Toggle Password Hover */
+  /* Change the color of the toggle icon on hover */
+  #toggle-password:hover {
     color: #a48d52;
-}
-
-/* Animations */
-@keyframes slideUp {
+  }
+  
+  /* Animations */
+  /* Slide-up animation for form entry */
+  @keyframes slideUp {
     0% {
-        transform: translate(-50%, 70%); 
-        opacity: 0;
+      transform: translate(-50%, 70%); /* Start below the viewport */
+      opacity: 0; /* Invisible at the start */
     }
     100% {
-        transform: translate(-50%, -50%); 
-        opacity: 1;
+      transform: translate(-50%, -50%); /* End at the center */
+      opacity: 1;  /* Fully visible at the end */
     }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-
-
-
-/* Mobile-Specific Styles */
-@media (max-width: 720px) {
-    
-    /* Header Adjustments */
-    header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 20px;
-        background-color: rgb(217, 217, 217);
-        position: fixed;
-        
-    }
-
-    /* Burger Menu Icon */
-    .burger-menu {
-        display: block;
-        font-size: 2rem;
-        color: #282828;
-        cursor: pointer;
-    }
-
-    /* Hide the Navigation Initially */
-    nav {
-        display: flex; /* Hidden by default */
-        position: absolute;
-        top: 70px; /* Adjust based on header height */
-        right: 0;
-        background-color: rgba(186, 186, 186, 0.9);
-        width: 20%;
-        border-radius: 5%;
-        z-index: 1;
-        transform: translateY(-20px); /* Animation starts from top */
-        transition: transform 0.3s ease-out;
-    }
-
-    nav.active {
-        display: block;
-        transform: translateY(0); /* Menu slides down */
-    }
-
-    nav ul {
-        list-style: none;
-        padding: 15px 20px;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav ul li a {
-        text-decoration: none;
-        color: #282828; /* Default text color */
-        font-family: "Noto Serif Display", serif;
-        padding: 12px;
-        display: block;
-        font-size: 1.1rem;
-        border-radius: 5px;
-        transition: all 0.3s ease-in-out; /* Smooth transitions */
-    }
-
+  }
   
-    nav ul li a:hover {
-        color: #a48d52;
-    }
-
-    /* Links will fade in when burger menu is active */
-    nav ul li {
-        opacity: 0;
-        animation: fadeInLinks 0.3s ease-in-out forwards;
-    }
-
-    nav ul li:nth-child(1) {
-        animation-delay: 0.1s;
-    }
-    nav ul li:nth-child(2) {
-        animation-delay: 0.2s;
-    }
-    nav ul li:nth-child(3) {
-        animation-delay: 0.3s;
-    }
-    nav ul li:nth-child(4) {
-        animation-delay: 0.4s;
-    }
-}
-
-/* Animation for fading in links */
-@keyframes fadeInLinks {
+  /* Fade-in Animation */
+/* Gradually fade in elements */
+  @keyframes fadeIn {
     from {
-        opacity: 0;
+      opacity: 0; /* Start fully transparent */
     }
     to {
-        opacity: 1;
+      opacity: 1; /* End fully visible */
     }
-}
-
-
-/* Animation for fading in links */
-@keyframes fadeInLinks {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-
-
-
-/* For 360px-720px: Show the burger menu */
-@media (max-width: 720px) {
+  }
+  
+  /* Mobile-Specific Styles */
+  @media (max-width: 720px) {
     /* Header Adjustments */
-    header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 20px;
-        position: relative; /* For proper positioning of the burger icon */
-    }
+  header {
+    padding: 10px 20px; /* Adjust padding for smaller screens */
+  }
 
-    /* Burger Menu Icon */
-    .burger-menu {
-        display: block; /* Visible in mobile view */
-        font-size: 2rem;
-        color: #282828;
-        cursor: pointer;
-    }
+  /* Burger Menu Icon */
+  .burger-menu {
+    display: block;
+    font-size: 2rem;
+    color: #282828;
+    cursor: pointer;
+  }
 
-    /* Hide the Navigation Initially */
-    nav {
-        display: none; /* Hidden by default */
-        position: absolute;
-        top: 70px; /* Adjust based on header height */
-        right: 0; /* Move it to the right side */
-        background-color: rgba(217, 217, 217, 0.5);
-        width: 50%; /* Adjust the width as needed */
-        border-radius: 0 0 10px 10px;
-        z-index: 1;
-        transform: translateY(-20px); /* Animation starts from top */
-        transition: transform 0.3s ease-out;
-    }
+  /* Navigation */
+   /* Hide the navigation menu by default */
+  nav {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: rgba(217, 217, 217, 0.5);
+    width: 30%;  /* Restrict width for mobile */
+    z-index: 1;
+    transform: translateY(-20px); /* Hidden initially */
+    transition: transform 0.3s ease-out;
+  }
 
-    nav.active {
-        display: block;
-        transform: translateY(0); /* Menu slides down */
-    }
+   /* Show the menu when active */
+  nav.active {
+    display: block; /* Make it visible when active */
+    transform: translateY(0);  /* Slide into view */
+  }
 
-    nav ul {
-        list-style-type: none;
-        display: flex;
-        gap: 20px;
-      }
-      
-      nav ul li a {
-        text-decoration: none;
-        color: #050505;
-        font-family: "Noto Serif Display", serif;
-        transition: color 0.3s ease;
-      }
-      
-      nav ul li a:hover {
-        color: #a48d52; /* Slight hover effect */
-      }
+   /* Mobile-friendly navigation styling */
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    gap: 15px;
+    padding: 15px 20px;
+    margin: 0;
+  }
 
-    /* Links Fade-in Animation */
-    @keyframes fadeInLinks {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
+  nav ul li {
+    /* Remove opacity animation, just rely on sliding effect */
+    animation: fadeInLinks 0.3s ease-in-out forwards;
+  }
 
-    nav ul li {
-        opacity: 0;
-        animation: fadeInLinks 0.3s ease-in-out forwards;
-    }
-    nav ul li:nth-child(1) {
-        animation-delay: 0.1s;
-    }
-    nav ul li:nth-child(2) {
-        animation-delay: 0.2s;
-    }
-    nav ul li:nth-child(3) {
-        animation-delay: 0.3s;
-    }
-    nav ul li:nth-child(4) {
-        animation-delay: 0.4s;
-    }
+  nav ul li:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  nav ul li:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  nav ul li:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  nav ul li:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  }
+
+/* Animation for fading in links */
+@keyframes fadeInLinks {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-/* For 721px and above: Hide burger menu */
-@media (min-width: 721px) {
+  
+  /* For larger screens */
+  @media (min-width: 721px) {
     .burger-menu {
-        display: none; /* Hide the burger icon on larger screens */
+      display: none; /* Hide the burger menu on larger screens */
     }
-
+  
+  /* Display the navigation menu as inline */
     nav {
-        display: block; /* Regular horizontal nav bar */
-        position: static;
-        background-color: transparent;
+      display: block;
     }
-
+  
     nav ul {
-        list-style-type: none;
-        display: flex;
-        gap: 20px;
-      }
-      
-      nav ul li a {
-        text-decoration: none;
-        color: #050505;
-        font-family: "Noto Serif Display", serif;
-        transition: color 0.3s ease;
-      }
-      
-      nav ul li a:hover {
-        color: #a48d52; /* Slight hover effect */
-      }
-}
+      display: flex;
+      gap: 20px;
+    }
+  }
+  
+  
