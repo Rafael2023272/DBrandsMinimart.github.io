@@ -6,9 +6,13 @@
     box-sizing: border-box;
   }
   
-body {
-  background: linear-gradient(to right, rgba(189, 153, 162, 0.551), rgba(230, 166, 117, 0.26));
-}
+  body {
+    background-image: url('background.png');
+    background-size: cover; /* Makes the image cover the entire body */
+    margin: 0; /* Ensures no default margin is added */
+    height: 100vh; /* Makes the body take up the full viewport height */
+  }
+  
   /* Header */ /* Header styling with flexbox layout */
   header {
     display: flex;
@@ -148,7 +152,6 @@ body {
   .cart-icon {
     position: absolute;
     width: 40px;
-    padding: 5px 5px;
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     margin-top: 10px;
@@ -378,7 +381,7 @@ body {
   .burger-menu {
     display: block;
     font-size: 2rem;
-    color: #282828;
+    color: #000000;
     cursor: pointer;
     z-index: 3; /* Ensure it stays above the nav menu */
   }
@@ -390,7 +393,7 @@ body {
     right: 0;
     height: 100%; /* Full screen height */
     width: 50%; /* 70% of the screen width */
-    background-color: rgba(113, 91, 54, 0.9); /* Semi-transparent background */
+    background-color: rgba(228, 214, 218, 0.9); /* Semi-transparent background */
     transform: translateX(100%); /* Initially hidden off-screen to the right */
     transition: transform 0.3s ease-out; /* Smooth sliding animation */
     z-index: 2;
