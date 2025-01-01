@@ -1,0 +1,822 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('background.png');
+  background-size: cover; /* Makes the image cover the entire body */
+  margin: 0; /* Ensures no default margin is added */
+  height: 100vh; /* Makes the body take up the full viewport height */
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: rgba(217, 217, 217, 0.5);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+header.transparent {
+  background-color: transparent;
+}
+
+/* Background color for the header on scroll */
+header.scrolled {
+  background-color: rgba(217, 217, 217, 0.5);
+}
+
+header img {
+  height: 60px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #050505;
+  font-family: "Noto Serif Display", serif;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #a48d52;
+}
+
+
+.Cover-content {
+  position: relative;
+  text-align: left;
+  color: white;
+  height: 100vh;
+  animation: slideshow 15s infinite; /* Slideshow animation */
+}
+
+.Cover-content img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@keyframes slideshow {
+  0% {
+      background: url('image1.jpg') no-repeat center center/cover;
+  }
+  25% {
+      background: url('image2.jpg') no-repeat center center/cover;
+  }
+  50% {
+      background: url('image3.jpg') no-repeat center center/cover;
+  }
+  75% {
+      background: url('image4.jpg') no-repeat center center/cover;
+  }
+  100% {
+      background: url('image1.jpg') no-repeat center center/cover;
+  }
+}
+
+
+.Cover-content h1 {
+  font-size: 5rem;
+  font-family: "Noto Serif Display", serif;
+  font-weight: bold;
+  color: #FFFFFF;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+
+.Cover-content .tagline {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+}
+
+.shop-now-button {
+  display: inline-block;
+  padding: 15px 50px;
+  font-size: 1rem;
+  color: #333;
+  background-color: transparent;
+  border: 2px solid #000000;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 55%;
+  left: 10%;
+}
+
+.shop-now-button:hover {
+  background-color: #252525;
+  color: #FFF;
+}
+
+.container {
+  text-align: left;
+  margin-top: 5% auto;
+  color: #fff;
+}
+
+.container h2 {
+  font-size: 2.5rem;
+  font-family: "Noto Serif Display", serif;
+  color: #000000;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+h2 .highlight {
+  background: linear-gradient(to right, #5a3e36, #d2b48c);; /* Define a gradient background */
+  -webkit-background-clip: text; /* Apply the gradient to text */
+  -webkit-text-fill-color: transparent; /* Make the text transparent to show the background */
+  background-clip: text; /* Fallback for non-WebKit browsers */
+  color: transparent; /* Additional fallback */
+}
+
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: left;
+  gap: 3rem;
+}
+
+/* Text Box Styling */
+.text-box {
+  font-family: "Antic Didone", serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #1f1f1f;
+  text-align: left;
+  width: 700px;
+  margin-left: 10%;
+}
+
+.text-box strong {
+  color: #100000;
+}
+
+.text-box em {
+  font-style: italic;
+  color: #0c0000;
+}
+
+.image-box {
+  flex: 1;
+  position: relative;
+  top: -100px;
+  right: 50px;
+}
+
+/* Image Box Styling */
+.image-box img {
+  max-width: 100%;
+}
+
+/* Button Styling */
+.shop-now {
+  background: linear-gradient(90deg,  rgba(217, 217, 217, 0.5));
+  color: #0f2027;
+  padding: 0.8rem 2rem;
+  margin-top: 5%;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-family: "Antic Didone", serif;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(60, 52, 52, 0.6);
+}
+
+.shop-now:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(143, 117, 78, 0.8);
+}
+
+.offer-heading h2 {
+  font-size: 2em;
+  font-family: "Noto Serif Display", serif;
+  color: #333;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 3%;
+}
+
+.product-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: "Antic Didone", serif;
+  border-bottom: 1px solid #000000;
+}
+
+.product {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.product h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.product p {
+  font-size: 0.9em;
+  color: #000000;
+  text-align: left;
+}
+
+.price {
+  position: absolute; 
+  right: 20px; 
+  display: inline-block;
+  padding: 7px 15px;
+  font-size: 1em;
+  font-family: "Anton", serif;
+  color: #000000;
+  margin-top: 10px;
+  border: 1px solid #000000;
+  background-color: rgba(217, 217, 217, 0.5);
+}
+
+.product button {
+  background-color: rgba(184, 157, 127, 0.5);
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 10px;
+  justify-content: left;
+  text-align: left;
+  align-self: start;
+  border: 1px solid #000000;
+  font-family: "Antic Didone", serif;
+}
+
+.product button:hover {
+  background-color: #e9e0c3;
+}
+
+.product:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.product img:hover {
+  transform: scale(1.1); 
+}
+
+
+.Items-heading h2 {
+  font-size: 2em;
+  font-family: "Noto Serif Display", serif;
+  color: #333;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
+
+.Items-container {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: "Antic Didone", serif;
+}
+
+.Items {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+  position: relative;
+}
+
+.Items img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);;
+}
+
+.Items h3 {
+  font-size: 1.2em;
+  margin: 5px 0;
+  text-align: left;
+}
+
+.Items p {
+  font-size: 0.9em;
+  color: #000000;
+  text-align: left;
+}
+
+.price {
+  position: absolute; 
+  right: 20px; 
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-family: "Anton", serif;
+  color: #000000;
+  margin-bottom: 15px;
+  border: 1px solid #000000;
+  background-color: rgba(217, 217, 217, 0.5);
+}
+
+.Items button {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 10px;
+  justify-content: left;
+  text-align: left;
+  align-self: start;
+  border: 1px solid #000000;
+  font-family: "Antic Didone", serif;
+}
+
+.Items button:hover {
+  background-color: #e9e0c3;
+}
+
+.cart-icon {
+  position: absolute;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 5px;
+  border: 1px solid #000000;
+  box-shadow: none !important; 
+}
+
+
+.image-container {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  margin: 5% auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.images img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease; 
+}
+
+.text-content {
+  flex: 1;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-content h2 {
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.text-content p {
+  font-size: 1.5rem;
+  color: gray;
+}
+
+.images img:hover {
+  transform: scale(1.1); 
+}
+.images:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 40px;
+  background: url('Desktop - 4.png') no-repeat center/cover; 
+  color: white;
+}
+
+.footer .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-section {
+  flex: 1;
+  max-width: 300px;
+}
+
+.logo-section img {
+  width: 50%;
+  height: auto;
+}
+
+.contact {
+  flex: 1;
+  padding: 10px;
+}
+
+.contact p {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.follow-us {
+  flex: 1;
+  text-align: center;
+}
+
+.follow-us p {
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.quote {
+  position: absolute;
+  top: 20px;
+  right: 90px;
+  font-size: 2rem;
+  font-style: italic;
+  text-align: right;
+}
+
+
+/* Responsive Design */
+@media (max-width: 720px) {
+
+  body {
+    height: auto !important;
+    margin: 0%;
+  }
+  /* Header Adjustments */
+  header {
+    padding: 10px 20px; /* Maintain consistent padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff; 
+    border-bottom: 1px solid #ccc; 
+  }
+  
+  /* Burger Menu Icon */
+  .burger-menu {
+    display: block;
+    font-size: 2rem;
+    color: #000000;
+    cursor: pointer;
+    z-index: 3; /* Ensure it stays above the nav menu */
+  }
+  
+  /* Navigation */
+  nav {
+    position: fixed; /* Fixed positioning for a full-page effect */
+    top: 0;
+    right: 0;
+    height: 100%; /* Full screen height */
+    width: 50%; /* 70% of the screen width */
+    background-color: rgba(228, 214, 218, 0.9); /* Semi-transparent background */
+    transform: translateX(100%); /* Initially hidden off-screen to the right */
+    transition: transform 0.3s ease-out; /* Smooth sliding animation */
+    z-index: 2;
+  }
+  
+  /* Show the menu when active */
+  nav.active {
+    transform: translateX(0); /* Slide into view */
+  }
+  
+  /* Navigation styling */
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    gap: 50px;
+    padding: 20px;
+    margin-top: 30%;
+    text-align: center; /* Center align the links */
+    height: 100%; /* Fill the height */
+    justify-content: start; /* Vertically center the links */
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  nav ul li a:hover {
+    color: #e3e3e3; /* Change color on hover */
+  }
+
+  .Cover-content {
+    height: 100vh; /* Maintain full viewport height */
+  }
+
+  .Cover-content img {
+    width: 100%; /* Ensure image scales to container width */
+    height: 100%; /* Ensure image fills the height */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+  }
+
+  .Cover-content h1 {
+      font-size: 3rem; /* Adjust font size */
+      top: 25%; /* Adjust position */
+      left: 5%; /* Adjust position */
+  }
+
+  .Cover-content .tagline {
+    font-size: 1rem; /* Adjust font size */
+    top: 50%; /* Adjust position */
+    left: 5%; /* Adjust position */
+  }
+
+  .shop-now-button {
+    padding: 10px 30px; /* Adjust padding */
+    font-size: 0.9rem; /* Adjust font size */
+    top: 55%; /* Adjust position */
+    left: 5%; /* Adjust position */
+  }
+
+  .container {
+    padding: 20px /* Adjust padding for smaller screens */
+  }
+
+  .container h2 {
+    font-size: 1.8rem; /* Scale down heading size */
+    text-align: center; /* Center-align the heading for better aesthetics */
+    margin-bottom: 30px;
+    margin: auto;
+  }
+
+  .content {
+    flex-direction: column; /* Stack text-box and image-box vertically */
+    align-items: center;
+    gap: 20px; /* Add space between the elements */
+  }
+
+  .text-box {
+    font-size: 1rem; /* Adjust font size for better readability */
+    width: 90%; /* Reduce width for smaller screens */
+    text-align: center; /* Center-align text for better visuals */
+    margin: auto;
+  }
+
+  .text-box p {
+    margin-bottom: 10px; /* Add spacing between paragraphs */
+  }
+
+  .text-box strong,
+  .text-box em {
+    display: inline; /* Ensure bold and italic text fit properly */
+  }
+
+  .text-box .shop-now {
+    font-size: 0.9rem; /* Adjust button size */
+    margin-top: 15px;
+  }
+
+  .image-box {
+    width: 100%; /* Make image-box take full width */
+    text-align: center; /* Center-align the image */
+  }
+
+  .image-box img {
+    max-width: 90%; /* Scale down the image */
+    height: auto;
+  }
+
+  .glow-frame {
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  .image-box {
+    margin: 0 auto;
+    top: 0;
+    right: 0;
+  }
+
+  .product-container {
+    flex-direction: column; /* Stack products */
+    gap: 20px;
+  }
+
+  .product {
+    width: 100%;
+  }
+
+  .Items-container {
+    flex-direction: column; /* Stack items */
+    gap: 20px;
+  }
+
+  .text-content h2 {
+    font-size: 1.8rem;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .images {
+    grid-template-columns: 1fr 1fr; /* double-column layout for images */
+  }
+
+  .images img {
+    max-height: 300px; /* Set a max height to avoid large images */
+  }
+
+  .content {
+      flex-direction: column;
+  }
+
+  .text-box {
+      flex: unset;
+  }
+
+  .image-box {
+      flex: unset;
+  }
+
+  .footer {
+    padding: 20px;
+  }
+
+  .footer .content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo-section {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .logo-section img {
+    margin-top: 10px;
+    width: 50%; /* Adjust size for smaller screens */
+  }
+
+  .contact, .follow-us {
+    flex: none;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center; /* Aligns the icons horizontally */
+    gap: 15px;
+    flex-wrap: nowrap; /* Prevents the icons from wrapping to the next line */
+  }
+
+  .social-icons a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .quote {
+    position: relative;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop-specific styles */
+
+  .burger-menu {
+    display: none; /* Hide the burger icon on larger screens */
+  }
+
+  nav {
+    display: block; /* Regular horizontal nav bar */
+    position: static;
+    background-color: transparent;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #050505;
+    font-family: "Noto Serif Display", serif;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #a48d52; /* Slight hover effect */
+  }
+    .Cover-content {
+    height: 100vh; /* Maintain full viewport height */
+  }
+
+  .Cover-content img {
+    width: 100%; /* Ensure image scales to container width */
+    height: 100%; /* Ensure image fills the height */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+  }
+
+  .image-box {
+    width: 40%; /* Balanced image size */
+    margin: 0;
+  }
+
+  .product-container {
+    flex-direction: row; /* Horizontal alignment */
+    gap: 30px;
+  }
+
+  .product {
+    width: 30%; /* Uniform product size */
+  }
+
+  .Items-container {
+    flex-direction: row; /* Horizontal alignment */
+    gap: 20px;
+  }
+
+  .images {
+    grid-template-columns: repeat(2, 1fr); /* Three-column layout for images */
+    gap: 20px;
+  }
+
+  .images img {
+    max-height: 400px; /* Larger image display */
+  }
+
+}
