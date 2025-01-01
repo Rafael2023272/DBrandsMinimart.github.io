@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+body {
+  background-image: url('background.png');
+  background-size: cover; /* Makes the image cover the entire body */
+  margin: 0; /* Ensures no default margin is added */
+  height: 500vh; /* Makes the body take up the full viewport height */
+}
 
 /* Header */
 header {
@@ -374,7 +380,6 @@ h2 .highlight {
 .cart-icon {
   position: absolute;
   width: 40px;
-  padding: 5px 5px;
   background-color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   margin-top: 10px;
@@ -520,7 +525,7 @@ h2 .highlight {
   .burger-menu {
     display: block;
     font-size: 2rem;
-    color: #282828;
+    color: #000000;
     cursor: pointer;
     z-index: 3; /* Ensure it stays above the nav menu */
   }
@@ -532,7 +537,7 @@ h2 .highlight {
     right: 0;
     height: 100%; /* Full screen height */
     width: 50%; /* 70% of the screen width */
-    background-color: rgba(113, 91, 54, 0.9); /* Semi-transparent background */
+    background-color: rgba(228, 214, 218, 0.9); /* Semi-transparent background */
     transform: translateX(100%); /* Initially hidden off-screen to the right */
     transition: transform 0.3s ease-out; /* Smooth sliding animation */
     z-index: 2;
@@ -578,6 +583,86 @@ h2 .highlight {
   .shop-now-button {
       font-size: 0.9rem;
       padding: 10px 40px;
+  }
+
+  .container {
+    padding: 20px /* Adjust padding for smaller screens */
+  }
+
+  .container h2 {
+    font-size: 1.8rem; /* Scale down heading size */
+    text-align: center; /* Center-align the heading for better aesthetics */
+    margin-bottom: 20px;
+  }
+
+  .content {
+    flex-direction: column; /* Stack text-box and image-box vertically */
+    align-items: center;
+    gap: 20px; /* Add space between the elements */
+  }
+
+  .text-box {
+    font-size: 1rem; /* Adjust font size for better readability */
+    width: 90%; /* Reduce width for smaller screens */
+    text-align: center; /* Center-align text for better visuals */
+    margin: auto;
+  }
+
+  .text-box p {
+    margin-bottom: 10px; /* Add spacing between paragraphs */
+  }
+
+  .text-box strong,
+  .text-box em {
+    display: inline; /* Ensure bold and italic text fit properly */
+  }
+
+  .text-box .shop-now {
+    font-size: 0.9rem; /* Adjust button size */
+    margin-top: 15px;
+  }
+
+  .image-box {
+    width: 100%; /* Make image-box take full width */
+    text-align: center; /* Center-align the image */
+  }
+
+  .image-box img {
+    max-width: 90%; /* Scale down the image */
+    height: auto;
+  }
+
+  .glow-frame {
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  .image-box {
+    margin: 0 auto;
+    top: 0;
+    right: 0;
+  }
+
+  .product-container {
+    flex-direction: column; /* Stack products */
+    gap: 20px;
+  }
+
+  .product {
+    width: 100%;
+  }
+
+  .Items-container {
+    flex-direction: column; /* Stack items */
+    gap: 20px;
+  }
+
+  .images {
+    grid-template-columns: 1fr; /* Single-column layout for images */
+  }
+
+  .images img {
+    max-height: 300px; /* Set a max height to avoid large images */
   }
 
   .content {
@@ -643,49 +728,91 @@ h2 .highlight {
 @media (min-width: 1024px) {
   /* Desktop-specific styles */
 
-  .burger-menu {
-    display: none; /* Hide the burger icon on larger screens */
+  /* Header Adjustments */
+  header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff; 
+    border-bottom: none; /* Cleaner look for larger screens */
   }
 
+  /* Burger Menu Icon (Hidden on larger screens) */
+  .burger-menu {
+    display: none; /* No need for burger menu on larger screens */
+  }
+
+  /* Navigation */
   nav {
-    display: block; /* Regular horizontal nav bar */
-    position: static;
+    position: static; /* Inline navigation for larger screens */
+    height: auto;
+    width: auto;
     background-color: transparent;
+    transform: none; /* No animation needed */
+    transition: none;
   }
 
   nav ul {
     list-style-type: none;
-    display: flex;
-    gap: 20px;
+    display: flex; /* Horizontal layout for navigation links */
+    flex-direction: row; 
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
   }
-  
+
   nav ul li a {
     text-decoration: none;
-    color: #050505;
-    font-family: "Noto Serif Display", serif;
-    transition: color 0.3s ease;
+    color: #000000;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
   }
-  
+
   nav ul li a:hover {
-    color: #a48d52; /* Slight hover effect */
+    color: #e3e3e3; /* Hover effect */
   }
+
+  .Cover-content h1 {
+    font-size: 5rem; /* Larger font size for hero text */
+  }
+
+  .Cover-content .tagline {
+    font-size: 1.5rem;
+  }
+
+  .shop-now-button {
+    font-size: 1.1rem;
+    padding: 15px 50px;
+  }
+
+  .image-box {
+    width: 40%; /* Balanced image size */
+    margin: 0;
+  }
+
+  .product-container {
+    flex-direction: row; /* Horizontal alignment */
+    gap: 30px;
+  }
+
+  .product {
+    width: 30%; /* Uniform product size */
+  }
+
   .Items-container {
-    flex-direction: row;
+    flex-direction: row; /* Horizontal alignment */
+    gap: 20px;
   }
 
-  .Items img {
-    max-width: 100%;
+  .images {
+    grid-template-columns: repeat(2, 1fr); /* Three-column layout for images */
+    gap: 20px;
   }
 
-  .footer {
-    text-align: left;
+  .images img {
+    max-height: 400px; /* Larger image display */
   }
 
-  .text-content {
-    padding-left: 50px;
-  }
-
-  .text-content h1 {
-    font-size: 3rem;
-  }
 }
