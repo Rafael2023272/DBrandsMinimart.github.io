@@ -178,7 +178,7 @@
         </div>
         <div class="text-content"  data-aos="fade-up">
             <p>DBRANDS MINIMART</p>
-            <h1>Health and beauty for everybody.</h1>
+            <h2>Health and beauty for everybody.</h2>
         </div>
     </div>
 
@@ -196,7 +196,7 @@
           </div>
           <div class="follow-us">
               <p><strong>FOLLOW US:</strong></p>
-              <div class="social-icons"  data-aos="fade-up">
+              <div class="social-icons"  data-aos="fade-down">
                   <a href="#"><i class="fab fa-facebook"></i></a>
                   <a href="#"><i class="fab fa-tiktok"></i></a>
                   <a href="#"><i class="fab fa-instagram"></i></a>
@@ -228,6 +228,17 @@
     });
   });
   </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (window.innerWidth <= 720) { // Target screens 720px wide or smaller
+      const socialIcons = document.querySelector(".social-icons");
+      if (socialIcons) {
+        socialIcons.removeAttribute("data-aos"); // Remove the AOS animation
+      }
+    }
+  });
+</script>
 
   <script>
     AOS.init({
