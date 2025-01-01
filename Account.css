@@ -1,0 +1,338 @@
+/* Global Styles */
+ /* Reset margin and padding for all elements, and use border-box for consistent sizing */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Header */
+  /* Styles for the website's header, making it fixed at the top and responsive */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: rgba(217, 217, 217, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  header.transparent {
+    background-color: transparent;
+}
+
+header.scrolled {
+    background-color: rgba(217, 217, 217, 0.5);
+}
+
+  /* Header Logo */
+  /* Set the height of the logo image */
+  header img {
+    height: 60px;
+  }
+  
+  /* Navigation Menu */
+  /* Remove default list styling and align navigation links horizontally */
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Navigation Links */
+  /* Style links with a font, transition, and color */
+  nav ul li a {
+    text-decoration: none;
+    color: #050505;
+    font-family: "Noto Serif Display", serif;
+    transition: color 0.3s ease;
+  }
+  
+  /* Change link color on hover */
+  nav ul li a:hover {
+    color: #a48d52;
+  }
+
+  @keyframes slideshow {
+    0% {
+        background: url('image1.jpg') no-repeat center center/cover;
+    }
+    25% {
+        background: url('image2.jpg') no-repeat center center/cover;
+    }
+    50% {
+        background: url('image3.jpg') no-repeat center center/cover;
+    }
+    75% {
+        background: url('image4.jpg') no-repeat center center/cover;
+    }
+    100% {
+        background: url('image1.jpg') no-repeat center center/cover;
+    }
+}
+
+  
+  /* Cover Section */
+  /* Style the full-page cover image or hero section */
+  .Cover-content {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    position: absolute;
+    text-align: left;
+    color: white;
+    height: 100vh;
+    z-index: -1; /* Ensure it is behind the form container */
+    animation: slideshow 15s infinite;
+    }
+  
+  /* Form Container */
+  .form-container {
+    display: flex;  /* Arrange elements in a column */
+    justify-content: center; /* Center align horizontally */
+    align-items: center; /* Center align vertically */
+    flex-direction: column; /* Stack child elements vertically */
+    border-radius: 15px; /* Rounded corners */
+    padding: 30px; /* Inner spacing */
+    gap: 20px; /* Space between child elements */
+    width: 100%; /* Full width */
+    max-width: 300px; /* Limit maximum width */
+    height: auto;
+    position: absolute;/* Position centrally */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);  /* Center align */
+    background: linear-gradient(to top, #463c21, rgba(133, 109, 90, 0.885)); /* Gradient background */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    animation: slideUp 0.8s ease-in-out forwards; /* Entry animation */
+    z-index: 1;  /* Ensure it stays above the cover */
+  } 
+  
+  /* Form Elements */
+  h1 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px; /* Space below the heading */
+    font-weight: 600;
+    text-align: center; /* Center text */
+    font-family: "Noto Serif Display", serif;
+    animation: fadeIn 0.8s ease-out;  /* Fade-in animation */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  /* Focused input styling */
+  input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s; /* Smooth transition on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    animation: fadeIn 0.8s ease-in-out;  /* Fade-in animation */
+  }
+  
+  input:focus {
+    border-color: #a48d52; /* Change border color */
+    box-shadow: 0 0 8px rgba(199, 169, 93, 0.995);  /* Highlighted shadow */
+  }
+
+  /* Button Styles */
+  button {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(184, 157, 127, 0.8);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease, transform 0.2s ease; /* Smooth transition and scaling */
+    font-weight: 600;  /* Bold text */
+    font-family: "Noto Serif Display", serif;
+    animation: fadeIn 0.8s ease-out;  /* Fade-in animation */
+  }
+  
+  /* Button hover and active state */
+  button:hover {
+    background-color: #564413;
+    transform: scale(1.1); /* Slightly enlarge */
+  }
+  
+  button:active {
+    transform: scale(0.95);  /* Shrink slightly when clicked */
+  }
+  
+  /* Links */
+  a {
+    text-decoration: none; /* Remove underline */
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Paragraphs */
+  /* Center-align paragraph text and style for consistency */
+  p {
+    text-align: center; 
+    font-size: 1rem;
+    color: white;
+    margin: 10px 0;
+    }
+  
+  /* Link Hover */
+  /* Add hover effect for links to change color and scale */
+  a:hover {
+    color: #6f430083;
+    transform: scale(1.1);
+  }
+  
+  /* Password Container */
+  /* Create a container for the password field and toggle icon */
+  .password-container {
+    position: relative; /* Enable positioning of the toggle icon relative to this container */
+    width: 100%;
+  }
+  
+  /* Password Input */
+  /* Style the password input field */
+  #password {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    width: 100%;
+    padding-right: 40px;
+  }
+  
+  /* Toggle Password Visibility */
+  /* Position and style the toggle icon for password visibility */
+  #toggle-password {
+    position: absolute; /* Position relative to the container */
+    right: 10px; /* Place near the right edge */
+    top: 50%;  /* Vertically center */
+    transform: translateY(-50%); /* Adjust for exact centering */
+    font-size: 1.2rem;  /* Slightly larger font for visibility */
+    cursor: pointer;
+    color: #282828;
+    transition: color 0.3s ease;
+  }
+  
+  /* Toggle Password Hover */
+  /* Change the color of the toggle icon on hover */
+  #toggle-password:hover {
+    color: #a48d52;
+  }
+  
+  /* Animations */
+  /* Slide-up animation for form entry */
+  @keyframes slideUp {
+    0% {
+      transform: translate(-50%, 70%); /* Start below the viewport */
+      opacity: 0; /* Invisible at the start */
+    }
+    100% {
+      transform: translate(-50%, -50%); /* End at the center */
+      opacity: 1;  /* Fully visible at the end */
+    }
+  }
+  
+  /* Fade-in Animation */
+/* Gradually fade in elements */
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* Start fully transparent */
+    }
+    to {
+      opacity: 1; /* End fully visible */
+    }
+  }
+  
+  /* Mobile-Specific Styles */
+@media (max-width: 720px) {
+    /* Header Adjustments */
+    header {
+        padding: 10px 20px; /* Maintain consistent padding */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff; 
+        border-bottom: 1px solid #ccc; 
+    }
+      
+      /* Burger Menu Icon */
+    .burger-menu {
+        display: block;
+        font-size: 2rem;
+        color: #000000;
+        cursor: pointer;
+        z-index: 3; /* Ensure it stays above the nav menu */
+      }
+      
+      /* Navigation */
+    nav {
+        position: fixed; /* Fixed positioning for a full-page effect */
+        top: 0;
+        right: 0;
+        height: 100%; /* Full screen height */
+        width: 50%; /* 70% of the screen width */
+        background-color: rgba(228, 214, 218, 0.9); /* Semi-transparent background */
+        transform: translateX(100%); /* Initially hidden off-screen to the right */
+        transition: transform 0.3s ease-out; /* Smooth sliding animation */
+        z-index: 2;
+      }
+      
+      /* Show the menu when active */
+    nav.active {
+        transform: translateX(0); /* Slide into view */
+      }
+      
+      /* Navigation styling */
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        gap: 50px;
+        padding: 20px;
+        margin-top: 30%;
+        text-align: center; /* Center align the links */
+        height: 100%; /* Fill the height */
+        justify-content: start; /* Vertically center the links */
+      }
+      
+    nav ul li a {
+        text-decoration: none;
+        color: #000000;
+        font-size: 1.5rem;
+        transition: color 0.3s ease-in-out;
+      }
+      
+    nav ul li a:hover {
+        color: #e3e3e3; /* Change color on hover */
+      }
+    }          
+  
+  /* For larger screens */
+@media (min-width: 721px) {
+    .burger-menu {
+      display: none; /* Hide the burger menu on larger screens */
+    }
+  
+  /* Display the navigation menu as inline */
+    nav {
+      display: block;
+    }
+  
+    nav ul {
+      display: flex;
+      gap: 20px;
+    }
+  }
+  
+  
