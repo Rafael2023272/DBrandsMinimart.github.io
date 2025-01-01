@@ -270,7 +270,7 @@ header.scrolled {
     .burger-menu {
         display: block;
         font-size: 2rem;
-        color: #282828;
+        color: #000000;
         cursor: pointer;
         z-index: 3; /* Ensure it stays above the nav menu */
       }
@@ -282,7 +282,7 @@ header.scrolled {
         right: 0;
         height: 100%; /* Full screen height */
         width: 50%; /* 70% of the screen width */
-        background-color: rgba(113, 91, 54, 0.9); /* Semi-transparent background */
+        background-color: rgba(228, 214, 218, 0.9); /* Semi-transparent background */
         transform: translateX(100%); /* Initially hidden off-screen to the right */
         transition: transform 0.3s ease-out; /* Smooth sliding animation */
         z-index: 2;
