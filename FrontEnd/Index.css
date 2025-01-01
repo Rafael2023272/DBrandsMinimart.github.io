@@ -7,9 +7,8 @@
 body {
   background-image: url('background.png');
   background-size: cover; /* Makes the image cover the entire body */
-  opacity: 0.9;
   margin: 0; /* Ensures no default margin is added */
-  height: 500vh; /* Makes the body take up the full viewport height */
+  height: 100vh; /* Makes the body take up the full viewport height */
 }
 
 /* Header */
