@@ -147,7 +147,7 @@ nav ul li a:hover {
 }
 
 h2 .highlight {
-  background: linear-gradient(to right, #5a3e36, #d2b48c);; /* Define a gradient background */
+  background: linear-gradient(to right, #5a3e36, #9c725d);; /* Define a gradient background */
   -webkit-background-clip: text; /* Apply the gradient to text */
   -webkit-text-fill-color: transparent; /* Make the text transparent to show the background */
   background-clip: text; /* Fallback for non-WebKit browsers */
@@ -187,12 +187,13 @@ h2 .highlight {
   flex: 1;
   position: relative;
   top: -100px;
-  right: 50px;
+  right: 100px;
 }
 
 /* Image Box Styling */
 .image-box img {
-  max-width: 100%;
+  max-width: 120%;
+  min-width: 120%;
 }
 
 /* Button Styling */
@@ -642,27 +643,9 @@ h2 .highlight {
     font-size: 0.9rem; /* Adjust button size */
     margin-top: 15px;
   }
-
   .image-box {
-    width: 100%; /* Make image-box take full width */
-    text-align: center; /* Center-align the image */
-  }
-
-  .image-box img {
-    max-width: 90%; /* Scale down the image */
-    height: auto;
-  }
-
-  .glow-frame {
-    display: inline-block;
-    max-width: 100%;
-  }
-
-  .image-box {
-    margin: 0 auto;
-    top: 0;
-    right: 0;
-  }
+    display: none;
+}
 
   .product-container {
     flex-direction: column; /* Stack products */
@@ -781,8 +764,37 @@ h2 .highlight {
   nav ul li a:hover {
     color: #a48d52; /* Slight hover effect */
   }
-    .Cover-content {
+
+  .Cover-content {
     height: 100vh; /* Maintain full viewport height */
+  }
+  
+  .Cover-content .tagline {
+    font-size: 1.2rem;
+    position: absolute;
+    top: 52%;
+    left: 10%;
+    margin: auto;
+  }
+  
+  .shop-now-button {
+    display: inline-block;
+    padding: 15px 50px;
+    font-size: 1rem;
+    color: #333;
+    background-color: transparent;
+    border: 2px solid #000000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 57%;
+    left: 10%;
+  }
+  
+  .shop-now-button:hover {
+    background-color: #252525;
+    color: #FFF;
   }
 
   .Cover-content img {
@@ -790,10 +802,11 @@ h2 .highlight {
     height: 100%; /* Ensure image fills the height */
     object-fit: cover; /* Maintain aspect ratio and cover the area */
   }
-
-  .image-box {
-    width: 40%; /* Balanced image size */
-    margin: 0;
+  
+  /* Image Box Styling */
+  .image-box img {
+    max-width: 120%;
+    min-width: 120%;
   }
 
   .product-container {
