@@ -7,6 +7,7 @@
 body {
   background-image: url('background.png');
   background-size: cover; /* Makes the image cover the entire body */
+  opacity: 0.9;
   margin: 0; /* Ensures no default margin is added */
   height: 500vh; /* Makes the body take up the full viewport height */
 }
@@ -422,9 +423,9 @@ h2 .highlight {
   justify-content: center;
 }
 
-.text-content h1 {
-  font-size: 3rem;
-  line-height: 1.4;
+.text-content h2 {
+  font-size: 4rem;
+  line-height: 1;
   margin-bottom: 10px;
 }
 
@@ -511,6 +512,10 @@ h2 .highlight {
 /* Responsive Design */
 @media (max-width: 720px) {
 
+  body {
+    height: auto !important;
+    margin: 0%;
+  }
   /* Header Adjustments */
   header {
     padding: 10px 20px; /* Maintain consistent padding */
@@ -572,17 +577,33 @@ h2 .highlight {
     color: #e3e3e3; /* Change color on hover */
   }
 
+  .Cover-content {
+    height: 100vh; /* Maintain full viewport height */
+  }
+
+  .Cover-content img {
+    width: 100%; /* Ensure image scales to container width */
+    height: 100%; /* Ensure image fills the height */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+  }
+
   .Cover-content h1 {
-      font-size: 4rem;
+      font-size: 3rem; /* Adjust font size */
+      top: 25%; /* Adjust position */
+      left: 5%; /* Adjust position */
   }
 
   .Cover-content .tagline {
-      font-size: 1rem;
+    font-size: 1rem; /* Adjust font size */
+    top: 50%; /* Adjust position */
+    left: 5%; /* Adjust position */
   }
 
   .shop-now-button {
-      font-size: 0.9rem;
-      padding: 10px 40px;
+    padding: 10px 30px; /* Adjust padding */
+    font-size: 0.9rem; /* Adjust font size */
+    top: 55%; /* Adjust position */
+    left: 5%; /* Adjust position */
   }
 
   .container {
@@ -592,7 +613,8 @@ h2 .highlight {
   .container h2 {
     font-size: 1.8rem; /* Scale down heading size */
     text-align: center; /* Center-align the heading for better aesthetics */
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    margin: auto;
   }
 
   .content {
@@ -657,8 +679,14 @@ h2 .highlight {
     gap: 20px;
   }
 
+  .text-content h2 {
+    font-size: 1.8rem;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
   .images {
-    grid-template-columns: 1fr; /* Single-column layout for images */
+    grid-template-columns: 1fr 1fr; /* double-column layout for images */
   }
 
   .images img {
@@ -728,63 +756,40 @@ h2 .highlight {
 @media (min-width: 1024px) {
   /* Desktop-specific styles */
 
-  /* Header Adjustments */
-  header {
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff; 
-    border-bottom: none; /* Cleaner look for larger screens */
-  }
-
-  /* Burger Menu Icon (Hidden on larger screens) */
   .burger-menu {
-    display: none; /* No need for burger menu on larger screens */
+    display: none; /* Hide the burger icon on larger screens */
   }
 
-  /* Navigation */
   nav {
-    position: static; /* Inline navigation for larger screens */
-    height: auto;
-    width: auto;
+    display: block; /* Regular horizontal nav bar */
+    position: static;
     background-color: transparent;
-    transform: none; /* No animation needed */
-    transition: none;
   }
 
   nav ul {
     list-style-type: none;
-    display: flex; /* Horizontal layout for navigation links */
-    flex-direction: row; 
-    gap: 30px;
-    padding: 0;
-    margin: 0;
-    align-items: center;
+    display: flex;
+    gap: 20px;
   }
-
+  
   nav ul li a {
     text-decoration: none;
-    color: #000000;
-    font-size: 1.2rem;
-    transition: color 0.3s ease-in-out;
+    color: #050505;
+    font-family: "Noto Serif Display", serif;
+    transition: color 0.3s ease;
   }
-
+  
   nav ul li a:hover {
-    color: #e3e3e3; /* Hover effect */
+    color: #a48d52; /* Slight hover effect */
+  }
+    .Cover-content {
+    height: 100vh; /* Maintain full viewport height */
   }
 
-  .Cover-content h1 {
-    font-size: 5rem; /* Larger font size for hero text */
-  }
-
-  .Cover-content .tagline {
-    font-size: 1.5rem;
-  }
-
-  .shop-now-button {
-    font-size: 1.1rem;
-    padding: 15px 50px;
+  .Cover-content img {
+    width: 100%; /* Ensure image scales to container width */
+    height: 100%; /* Ensure image fills the height */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
   }
 
   .image-box {
