@@ -320,6 +320,7 @@ h2 .highlight {
   justify-content: space-between;
   gap: 20px;
   font-family: "Antic Didone", serif;
+  border-bottom: 1px solid black;
 }
 
 .Items {
@@ -390,6 +391,59 @@ h2 .highlight {
   box-shadow: none !important; 
 }
 
+.why-our-product {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.why-our-product h1 {
+  font-size: 2em;
+  margin: 5%; /* 10% margin below the header */
+}
+
+.why-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px; /* Increased gap to 40px */
+  justify-content: center;
+  position: relative;
+}
+
+.why-card {
+  flex: 1 1 calc(33.33% - 40px);
+  min-width: 250px;
+  max-width: 330px;
+  padding: 30px;
+  border: 1px solid #bababa;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+.why-card:hover {
+  transform: scale(1.1); /* Zoom in by 40% */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 2; /* Bring the hovered card above others */
+}
+
+.why-card:hover ~ .why-card,
+.why-content:hover .why-card:not(:hover) {
+  filter: blur(2px); /* Blur other cards only when one is hovered */
+  opacity: 0.7; /* Reduce opacity of non-hovered cards */
+}
+
+.why-card h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-family: "Noto Serif Display", serif;
+}
+
+.why-card p {
+  font-size: 0.9em;
+  color: #000;
+}
 
 .image-container {
   display: flex;
@@ -668,6 +722,23 @@ h2 .highlight {
     margin-bottom: 10px;
   }
 
+  .why-content {
+    flex-direction: column;
+    gap: 20px; /* Adjusted gap for smaller screens */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .why-card {
+    flex: 1 1 100%;
+  }
+
+  .why-card:hover {
+    transform: scale(1); /* Zoom in by 40% */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    z-index: 2; /* Bring the hovered card above others */
+  }
+
   .images {
     grid-template-columns: 1fr 1fr; /* double-column layout for images */
   }
@@ -822,6 +893,18 @@ h2 .highlight {
   .Items-container {
     flex-direction: row; /* Horizontal alignment */
     gap: 20px;
+  }
+
+  .why-our-product h1 {
+    font-size: 3rem;
+  }
+
+  .why-card h2 {
+    font-size: 1.75rem;
+  }
+
+  .why-card p {
+    font-size: 1.125rem;
   }
 
   .images {
