@@ -7,7 +7,7 @@
   }
   
   body {
-    background-image: url('FrontEnd/background.png');
+    background-image: url('FrontEnd/back.png');
     background-size: cover; /* Makes the image cover the entire body */
     margin: 0; /* Ensures no default margin is added */
     height: 100vh; /* Makes the body take up the full viewport height */
