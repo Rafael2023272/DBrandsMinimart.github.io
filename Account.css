@@ -317,7 +317,13 @@
     nav ul li a:hover {
         color: #e3e3e3; /* Change color on hover */
       }
+
+    .form-container {
+        display: flex;  /* Arrange elements in a column */
+        justify-content: center; /* Center align horizontally */
+        align-items: center; /* Center align vertically */
     }          
+  }
   
   /* For larger screens */
 @media (min-width: 721px) {
